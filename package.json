@@ -2,11 +2,12 @@
   "name": "interlinear",
   "scripts": {
     "start": "imba -w server.imba",
-    "build": "imba build app/index.html",
+    "build": "imba build --base . app/index.html",
     "publish": "npx gh-pages --no-history --dotfiles --dist dist/ --branch release"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "gh-pages": "^4.0.0",
     "imba": "^2.0.0-alpha.213"
   },
   "repository": "Bohooslav/interlinear",
