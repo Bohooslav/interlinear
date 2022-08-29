@@ -2,8 +2,9 @@
   "name": "interlinear",
   "scripts": {
     "start": "imba -w server.imba",
-    "build": "imba build --base . app/index.html",
-    "publish": "npx gh-pages --no-history --dotfiles --dist dist/ --branch release"
+    "build": "imba build --base /interlinear app/index.html",
+    "publish": "npm run build && touch dist/.nojekyll && npx gh-pages --no-history --dotfiles --dist dist/ --branch release",
+    "static": "npm run build && cd dist && python3 -m http.server"
   },
   "dependencies": {
     "express": "^4.17.1",
