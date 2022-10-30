@@ -4,6 +4,7 @@
     "start": "imba -w server.imba",
     "build": "imba build --base /interlinear app/index.html",
     "publish": "npm run build && touch dist/.nojekyll && npx gh-pages --no-history --dotfiles --dist dist/ --branch release",
+    "mpub": "touch dist/.nojekyll && npx gh-pages --no-history --dotfiles --dist dist/ --branch release",
     "static": "npm run build && cd dist && python3 -m http.server"
   },
   "dependencies": {
@@ -13,7 +14,7 @@
   },
   "repository": "Bohooslav/interlinear",
   "description": "Interlinear Bible reading tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/Bohooslav/interlinear",
   "author": "Bohuslav Pavlyshynets (https://github.com/Bohooslav)",
   "license": "ISC"

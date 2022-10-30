@@ -2,7 +2,6 @@ import allverses from './verses.json'
 # import allverses from './test_verses.json'
 import books from './books.json'
 
-
 import './styles'
 
 let agent = window.navigator.userAgent;
@@ -139,6 +138,11 @@ tag app
 				getText(books[current_index - 1].bookid, books[current_index - 1].chapters)
 
 
+	def toggleBooksMenu
+		if bible_menu_left == 0
+			bible_menu_left = -300
+		else
+			bible_menu_left = 0
 
 	<self @mousemove=mousemove>
 		<nav[l:{bible_menu_left}px]>
@@ -153,12 +157,12 @@ tag app
 
 		<main>
 			<header[d:flex jc:space-between ai:center]>
-				<button.arrow @click=prevChapter [d@lt-md:none]>
+				<button.arrow @click=prevChapter>
 					<svg[transform: rotate(90deg)] width="16" height="10" viewBox="0 0 8 5">
 						<title> 'Previous'
 						<polygon points="4,3 1,0 0,1 4,5 8,1 7,0">
 				<h1> settings.bookname, ' ', settings.chapter
-				<button.arrow @click=nextChapter [d@lt-md:none]>
+				<button.arrow @click=nextChapter>
 					<svg[transform: rotate(-90deg)] width="16" height="10" viewBox="0 0 8 5">
 						<title> 'Next'
 						<polygon points="4,3 1,0 0,1 4,5 8,1 7,0">
@@ -171,6 +175,12 @@ tag app
 
 		<footer[ta:center mt:auto max-width:1024px m:auto]>
 			<p[fs:12px p:16px 0 o:0.7 us:none]> "The Holy Bible, Berean Study Bible, Copyright ©2016, 2020 by Bible Hub. All Rights Reserved Worldwide. Free Licensing for use in Websites, Apps, Software, and Audio: {<a [c:rose0] href='http://berean.bible/licensing.htm'> 'http://berean.bible/licensing.htm'}"
+
+		<section#navigation>
+			<div @click=toggleBooksMenu>
+				<svg [s: 42px fill:white] viewBox="0 0 16 16">
+					<title> 'Books menu'
+					<path d="M3 5H7V6H3V5ZM3 8H7V7H3V8ZM3 10H7V9H3V10ZM14 5H10V6H14V5ZM14 7H10V8H14V7ZM14 9H10V10H14V9ZM16 3V12C16 12.55 15.55 13 15 13H9.5L8.5 14L7.5 13H2C1.45 13 1 12.55 1 12V3C1 2.45 1.45 2 2 2H7.5L8.5 3L9.5 2H15C15.55 2 16 2.45 16 3ZM8 3.5L7.5 3H2V12H8V3.5ZM15 3H9.5L9 3.5V12H15V3Z">
 
 
 	css
@@ -250,5 +260,28 @@ tag app
 				fill@hover: amber4
 				transform@hover: rotate(360deg)
 				bd:none
+		
+		#navigation
+			pos:fixed
+			b:0px r:0 l:0
+			height:48px
+			d:flex jc:space-between
+			bgc:$bgc
+
+		#navigation
+			div
+				cursor:pointer
+				w:100%
+				d:flex
+				jc:center
+				ai:center
+				o:0.75 @hover:1
+
+			svg
+				max-width: 32px
+				max-height: 32px
+
+						
+
 
 imba.mount <app>
