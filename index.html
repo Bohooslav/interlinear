@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><!--$head$-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bolls Interlinear</title>
+    <!-- reference to the client script styles -->
+    <link rel='stylesheet' href='/interlinear/assets/index.R1B3Z4YB.css'>
+  </head>
+  <body><!--$body$-->
+    <!-- reference to the client script -->
+    <script type="module" src='/interlinear/assets/client.PO6MZTGM.js'></script>
+    <script type="module">
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("sw.js").then(
+            function (registration) {
+              // Registration was successful
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+              registration.update();
+            },
+            function (err) {
+              // registration failed :(
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
+        });
+      }
+    </script>
+  </body>
+</html>

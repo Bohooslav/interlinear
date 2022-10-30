@@ -1,0 +1,17 @@
+{
+  "entry:app/client.imba?web": {
+    "url": "/interlinear/assets/client.PO6MZTGM.js",
+    "path": "/home/bohuslav/projects/interlinear/dist/assets/client.PO6MZTGM.js"
+  },
+  "*?css": {
+    "url": "/interlinear/assets/index.R1B3Z4YB.css",
+    "path": "/home/bohuslav/projects/interlinear/dist/assets/index.R1B3Z4YB.css"
+  },
+  "/interlinear/index.html": {},
+  "/interlinear/assets/verses.json.PA6JGNXA.js": {},
+  "/interlinear/assets/books.json.GEGN23F3.js": {},
+  "/interlinear/assets/client.PO6MZTGM.js": {},
+  "/interlinear/assets/client.DVVQRTHW.css": {},
+  "/interlinear/assets/index.R1B3Z4YB.css": {},
+  "main": "index.html"
+}
